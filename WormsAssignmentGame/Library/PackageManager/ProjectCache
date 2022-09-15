@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637988426728768553
-    m_Hash: 2454341941
+      ticks: 637988535145729812
+    m_Hash: 3312632434
   m_LockFileStatus:
     m_FilePath: D:/Github/WormsAssignment/WormsAssignmentGame/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637988426728905439
-    m_Hash: 1554448162
+      ticks: 637988535145739788
+    m_Hash: 2176726185
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -3457,6 +3457,20 @@ m_ResolvedPackages:
   errors: []
   versions:
     all:
+    - 4.0.0-preview
+    - 4.0.0
+    - 4.0.7-preview
+    - 4.0.7
+    - 4.0.8-preview
+    - 4.0.9
+    - 4.1.0-preview
+    - 4.1.0
+    - 4.2.0
+    - 4.3.0
+    - 4.3.1
+    - 4.3.2
+    - 4.6.0-preview
+    - 4.7.0-preview
     - 4.9.1
     compatible:
     - 4.9.1
@@ -3475,7 +3489,7 @@ m_ResolvedPackages:
     capabilities: 7
   hideInEditor: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 0
+  datePublishedTicks: 637695653650000000
   documentationUrl: 
   hasRepository: 1
   repository:

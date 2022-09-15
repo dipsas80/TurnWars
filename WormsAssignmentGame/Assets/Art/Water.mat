@@ -93,8 +93,8 @@ Material:
     - _WaveSpeed: 0.2
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.0518868, g: 0.8827987, b: 1, a: 1}
+    - _BaseColor: {r: 0, g: 0.12096934, b: 0.5566038, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _RippleColor: {r: 6.6572647, g: 15.406813, b: 18.164822, a: 1}
+    - _RippleColor: {r: 0.41231728, g: 0.807827, b: 1.2311444, a: 1}
   m_BuildTextureStacks: []
