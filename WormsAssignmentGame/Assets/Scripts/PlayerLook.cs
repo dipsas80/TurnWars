@@ -32,6 +32,9 @@ public class PlayerLook : MonoBehaviour
     private float xRotation = 0;
 
     public float moveSpeed = 10f;
+
+    //MemberStats
+    public MemberStats ms;
     
     void Start()
     {
@@ -88,7 +91,10 @@ public class PlayerLook : MonoBehaviour
     {
         Vector3 moveDirection = playerBody.forward * verticalInput + playerBody.right * horizontalInput;
 
-        
+        if(moveDirection != Vector3.zero)
+        {
+            ms.movementUsed += 1;
+        }
 
         if(grounded)
         {

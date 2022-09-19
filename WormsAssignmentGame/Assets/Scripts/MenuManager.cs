@@ -43,7 +43,8 @@ public class MenuManager : MonoBehaviour
         playerCustomization.SetActive(true);
 
         //start of playerCycle
-        activePlayer = Instantiate(playerManager, teamSelector[playerCycle].transform.position, teamSelector[playerCycle].transform.rotation);
+        activePlayer = Instantiate(playerManager, Vector3.zero, teamSelector[playerCycle].transform.rotation);
+        activePlayer.GetComponent<PlayerManager>().id = 0;
         DontDestroyOnLoad(activePlayer);
         teamSelector[playerCycle].SetActive(true);
     }
@@ -69,7 +70,8 @@ public class MenuManager : MonoBehaviour
                 teamSelector[i].SetActive(false);
             }
             teamSelector[playerCycle].SetActive(true);
-            activePlayer = Instantiate(playerManager, teamSelector[playerCycle].transform.position, teamSelector[playerCycle].transform.rotation);
+            activePlayer = Instantiate(playerManager, Vector3.zero, teamSelector[playerCycle].transform.rotation);
+            activePlayer.GetComponent<PlayerManager>().id = playerCycle;
             DontDestroyOnLoad(activePlayer);
         }
         else

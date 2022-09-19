@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8745087747025970705}
   m_Layer: 0
   m_Name: PlayerManager
-  m_TagString: Untagged
+  m_TagString: pm
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,6 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3f01ee2824c9614fbb3eb3b84e406bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  member1: {fileID: 0}
-  member2: {fileID: 0}
-  member3: {fileID: 0}
+  memberTypes: []
+  member1: 
+  member2: 
+  member3: 
+  members:
+  - {fileID: 1687327108511463489, guid: 8f45009364896804180df82ed686f8ed, type: 3}
+  - {fileID: 1687327108511463489, guid: 8f45009364896804180df82ed686f8ed, type: 3}
+  - {fileID: 1687327108511463489, guid: 8f45009364896804180df82ed686f8ed, type: 3}
+  id: 0
+  activeChar: 0
