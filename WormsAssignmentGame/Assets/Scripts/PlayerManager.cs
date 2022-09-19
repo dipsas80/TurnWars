@@ -49,6 +49,7 @@ public class PlayerManager : MonoBehaviour
         {
             members[activeChar].GetComponentInChildren<PlayerLook>().enabled = true;
             members[activeChar].GetComponentInChildren<Camera>().enabled = true;
+            members[activeChar].GetComponentInChildren<AudioListener>().enabled = true;
             
             for(int i = 0; i < members.Length; i++)
             {
@@ -56,6 +57,7 @@ public class PlayerManager : MonoBehaviour
                 {
                     members[i].GetComponentInChildren<PlayerLook>().enabled = false;
                     members[i].GetComponentInChildren<Camera>().enabled = false;
+                    members[i].GetComponentInChildren<AudioListener>().enabled = false;
                 }
             }
 
@@ -65,7 +67,7 @@ public class PlayerManager : MonoBehaviour
         {
             for(int i = 0; i < members.Length; i++)
             {
-                
+                members[i].GetComponentInChildren<AudioListener>().enabled = false;
                 members[i].GetComponentInChildren<PlayerLook>().enabled = false;
                 members[i].GetComponentInChildren<Camera>().enabled = false;
                 
