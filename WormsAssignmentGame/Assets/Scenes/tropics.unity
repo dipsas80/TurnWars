@@ -168,6 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerManagers: []
+  activePlayerIndex: 0
 --- !u!43 &134954585
 Mesh:
   m_ObjectHideFlags: 0

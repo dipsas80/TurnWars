@@ -93,7 +93,7 @@ public class PlayerLook : MonoBehaviour
 
         if(moveDirection != Vector3.zero)
         {
-            ms.movementUsed += 1;
+            ms.movementUsed += 0.5f;
         }
 
         if(grounded)

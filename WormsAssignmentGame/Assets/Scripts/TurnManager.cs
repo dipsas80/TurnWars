@@ -20,12 +20,4 @@ public class TurnManager : MonoBehaviour
         activePlayerIndex++;
         activePlayerIndex = activePlayerIndex % playerManagers.Length;
     }
-
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.M))
-        {
-            NextPlayerTurn();
-        }
-    }
 }
