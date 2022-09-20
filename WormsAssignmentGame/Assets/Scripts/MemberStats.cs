@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class MemberStats : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class MemberStats : MonoBehaviour
     public GameObject uiElement;
     public Slider Mslider;
     public Slider HPslider;
+    public TextMeshProUGUI actions;
     private GameObject particleExplosion;
     private bool dead;
     public GameObject weapon;
@@ -20,8 +22,10 @@ public class MemberStats : MonoBehaviour
     void Update()
     {
         Mslider.value = movementUsed;
+        shots = (weapon.GetComponent<Weapon>().maxShots - weapon.GetComponent<Weapon>().shotAmount);
         HPslider.value = health;
         doneShooting = weapon.GetComponent<Weapon>().noMoreShots;
+        actions.text = ("actions: " + shots);
 
         if(health <= 0)
         {

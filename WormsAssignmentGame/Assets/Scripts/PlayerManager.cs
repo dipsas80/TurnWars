@@ -75,6 +75,7 @@ public class PlayerManager : MonoBehaviour
         {
             if(members[activeChar].GetComponent<MemberStats>().movementUsed >= 100 && members[activeChar].GetComponent<MemberStats>().doneShooting == true || members[activeChar].GetComponent<MemberStats>().health <= 0)
             {
+                
                 if(activeChar != 2)
                 {
                     activeChar++;
@@ -84,7 +85,8 @@ public class PlayerManager : MonoBehaviour
                     activeChar = 0;
                     GameObject.Find("TurnManager").GetComponent<TurnManager>().NextPlayerTurn();
                 }
-
+                members[activeChar].GetComponent<MemberStats>().weapon.GetComponent<Weapon>().shotAmount = 0;
+                members[activeChar].GetComponent<MemberStats>().weapon.GetComponent<Weapon>().noMoreShots = false;
                 members[activeChar].GetComponent<MemberStats>().movementUsed = 0;
             }
         }

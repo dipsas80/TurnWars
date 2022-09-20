@@ -84,7 +84,7 @@ public class PlayerLook : MonoBehaviour
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
 
-        if(Input.GetKey(jumpKey) && readyToJump == true && grounded == true && ms.movementUsed < 100)
+        if(Input.GetKeyDown(jumpKey) && readyToJump == true && grounded == true && ms.movementUsed < 100)
         {
             readyToJump = false;
             Jump();
