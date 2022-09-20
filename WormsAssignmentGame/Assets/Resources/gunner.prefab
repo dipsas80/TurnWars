@@ -163,6 +163,7 @@ GameObject:
   - component: {fileID: 330784747483734934}
   - component: {fileID: 3690969742810393651}
   - component: {fileID: 1503078733689215225}
+  - component: {fileID: 9116232137283256149}
   m_Layer: 0
   m_Name: gun
   m_TagString: Untagged
@@ -178,8 +179,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1143068047281682732}
   m_LocalRotation: {x: 0.50000006, y: 0.50000006, z: -0.49999997, w: -0.49999994}
-  m_LocalPosition: {x: 0.55800056, y: -0.273, z: 1.073}
-  m_LocalScale: {x: 13.282229, y: 13.282229, z: 13.282229}
+  m_LocalPosition: {x: 0.754, y: -0.2, z: 1.1}
+  m_LocalScale: {x: 12, y: 12, z: 12}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9017821443756286426}
@@ -235,6 +236,23 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &9116232137283256149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1143068047281682732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e001dbca3aa8b984d8e47a225c359447, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponType: 0
+  cam: {fileID: 9017821443756286426}
+  player: {fileID: 9017821444563933737}
+  noMoreShots: 0
+  maxShots: 5
 --- !u!1 &2206906296898855824
 GameObject:
   m_ObjectHideFlags: 0
@@ -1277,7 +1295,7 @@ GameObject:
   - component: {fileID: 9017821444563933744}
   m_Layer: 0
   m_Name: gunner
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1290,7 +1308,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9017821444563933737}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.77, y: 2.354, z: -5.74}
+  m_LocalPosition: {x: 0.754, y: -0.2, z: 1.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1376,9 +1394,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   movementUsed: 0
+  shots: 0
   uiElement: {fileID: 4088838933098750572}
   Mslider: {fileID: 4491872553121326455}
   HPslider: {fileID: 2096153948260119704}
+  weapon: {fileID: 1143068047281682732}
+  team: 0
+  doneShooting: 0
 --- !u!54 &9017821444563933744
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -43,7 +43,11 @@ public class PlayerLook : MonoBehaviour
     }
     void FixedUpdate()
     {
-        MovePlayer();
+        if(ms.movementUsed < 100)
+        {
+            MovePlayer();
+        }
+        
     }
     void Update()
     {
@@ -80,7 +84,7 @@ public class PlayerLook : MonoBehaviour
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
 
-        if(Input.GetKey(jumpKey) && readyToJump == true && grounded == true)
+        if(Input.GetKey(jumpKey) && readyToJump == true && grounded == true && ms.movementUsed < 100)
         {
             readyToJump = false;
             Jump();
@@ -119,6 +123,8 @@ public class PlayerLook : MonoBehaviour
     }
     private void Jump()
     {
+        ms.movementUsed += 5f;
+
         playerBody.GetComponent<Rigidbody>().velocity = new Vector3(playerBody.GetComponent<Rigidbody>().velocity.x, 0f, playerBody.GetComponent<Rigidbody>().velocity.z);
 
         playerBody.GetComponent<Rigidbody>().AddForce(playerBody.transform.up * jumpForce, ForceMode.Impulse);

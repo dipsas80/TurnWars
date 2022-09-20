@@ -7,21 +7,27 @@ public class MemberStats : MonoBehaviour
 {
     public int health = 100;
     public float movementUsed = 0;
+    public int shots = 0;
     public GameObject uiElement;
     public Slider Mslider;
     public Slider HPslider;
     private GameObject particleExplosion;
     private bool dead;
+    public GameObject weapon;
+    public int team;
+    public bool doneShooting;
 
     void Update()
     {
         Mslider.value = movementUsed;
         HPslider.value = health;
+        doneShooting = weapon.GetComponent<Weapon>().noMoreShots;
 
         if(health <= 0)
         {
             if(dead == false)
             {
+                weapon.SetActive(false);
                 this.gameObject.GetComponent<MeshRenderer>().enabled = false;
                 this.gameObject.GetComponent<Rigidbody>().isKinematic = true;
                 this.gameObject.GetComponent<BoxCollider>().enabled = false;

@@ -51,6 +51,10 @@ public class PlayerManager : MonoBehaviour
             members[0] = Instantiate(Resources.Load(member1, typeof(GameObject))) as GameObject;
             members[1] = Instantiate(Resources.Load(member2, typeof(GameObject))) as GameObject;
             members[2] = Instantiate(Resources.Load(member3, typeof(GameObject))) as GameObject;
+
+            members[0].GetComponent<MemberStats>().team = id;
+            members[1].GetComponent<MemberStats>().team = id;
+            members[2].GetComponent<MemberStats>().team = id;
         }
         
     }
@@ -69,7 +73,7 @@ public class PlayerManager : MonoBehaviour
 
         if(GameObject.Find("TurnManager") != null && GameObject.Find("TurnManager").GetComponent<TurnManager>().activePlayerIndex == id)
         {
-            if(members[activeChar].GetComponent<MemberStats>().movementUsed >= 100 || members[activeChar].GetComponent<MemberStats>().health <= 0)
+            if(members[activeChar].GetComponent<MemberStats>().movementUsed >= 100 && members[activeChar].GetComponent<MemberStats>().doneShooting == true || members[activeChar].GetComponent<MemberStats>().health <= 0)
             {
                 if(activeChar != 2)
                 {
@@ -91,15 +95,20 @@ public class PlayerManager : MonoBehaviour
 
         if(GameObject.Find("TurnManager") != null && GameObject.Find("TurnManager").GetComponent<TurnManager>().activePlayerIndex == id)
         {
+            
+            members[activeChar].GetComponent<MemberStats>().weapon.SetActive(true);
             members[activeChar].GetComponent<MemberStats>().uiElement.SetActive(true);
             members[activeChar].GetComponentInChildren<PlayerLook>().enabled = true;
             members[activeChar].GetComponentInChildren<Camera>().enabled = true;
             members[activeChar].GetComponentInChildren<AudioListener>().enabled = true;
             
+            
             for(int i = 0; i < members.Length; i++)
             {
                 if(i != activeChar)
                 {
+                    
+                    members[i].GetComponent<MemberStats>().weapon.SetActive(false);
                     members[i].GetComponent<MemberStats>().uiElement.SetActive(false);
                     members[i].GetComponentInChildren<PlayerLook>().enabled = false;
                     members[i].GetComponentInChildren<Camera>().enabled = false;
@@ -113,6 +122,8 @@ public class PlayerManager : MonoBehaviour
         {
             for(int i = 0; i < members.Length; i++)
             {
+                
+                members[i].GetComponent<MemberStats>().weapon.SetActive(false);
                 members[i].GetComponent<MemberStats>().uiElement.SetActive(false);
                 members[i].GetComponentInChildren<AudioListener>().enabled = false;
                 members[i].GetComponentInChildren<PlayerLook>().enabled = false;
