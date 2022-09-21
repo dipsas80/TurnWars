@@ -5,6 +5,8 @@ using UnityEngine;
 public class TurnManager : MonoBehaviour
 {
     public GameObject[] playerManagers;
+    public GameObject[] players;
+    public Transform[] spawnPoints;
     public int activePlayerIndex = 0;
 
     void Awake(){
@@ -13,6 +15,15 @@ public class TurnManager : MonoBehaviour
         {
             playerManagers[i].GetComponent<PlayerManager>().SpawnPlayers();
         }
+
+
+        //spawn in
+        players = GameObject.FindGameObjectsWithTag("Player");
+        for(int i = 0; i < players.Length; i++)
+        {
+            players[i].transform.position = spawnPoints[i].position;
+        }
+        
     }
 
     public void NextPlayerTurn()
