@@ -742,6 +742,8 @@ MonoBehaviour:
   noMoreShots: 0
   damage: 33
   maxShots: 3
+  isHitscan: 1
+  projectile: {fileID: 0}
 --- !u!1 &3508096065929436808
 GameObject:
   m_ObjectHideFlags: 0

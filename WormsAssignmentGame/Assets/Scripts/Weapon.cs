@@ -14,6 +14,10 @@ public class Weapon : MonoBehaviour
     public int damage;
     public int maxShots;
 
+    public bool isHitscan;
+    public Rigidbody projectile;
+    //public Transform shootPos;
+
     private void Awake() 
     {
         
@@ -32,16 +36,25 @@ public class Weapon : MonoBehaviour
         shotAmount++;
         
         RaycastHit hit;
-        if(Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))
+        if(isHitscan == true)
         {
-            print(hit.transform.name);
-            if(hit.transform.tag == "Player" && hit.transform.GetComponent<MemberStats>().team != player.GetComponent<MemberStats>().team)
+            if(Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))
             {
-                hit.transform.GetComponent<MemberStats>().health -= damage;
+                print(hit.transform.name);
+                if(hit.transform.tag == "Player" && hit.transform.GetComponent<MemberStats>().team != player.GetComponent<MemberStats>().team)
+                {
+                    hit.transform.GetComponent<MemberStats>().health -= damage;
+                }
+                hitEffect = Instantiate(Resources.Load("shoot", typeof(GameObject)), hit.point, Quaternion.Euler (90f, 0f, 0f)) as GameObject;
+                Invoke("RemoveEffect", 0.2f);        
             }
-            
-            hitEffect = Instantiate(Resources.Load("shoot", typeof(GameObject)), hit.point, Quaternion.Euler (90f, 0f, 0f)) as GameObject;
-            Invoke("RemoveEffect", 0.2f);        
+        }
+        else if(isHitscan == false && projectile != null)
+        {
+            var newProjectile = Instantiate(projectile, cam.transform.position, cam.transform.rotation);
+            newProjectile.velocity = transform.TransformDirection(new Vector3(0, -30f, 0));
+            newProjectile.gameObject.GetComponent<DestroyOnHit>().team = player.GetComponent<MemberStats>().team;
+            newProjectile.gameObject.GetComponent<DestroyOnHit>().damage = damage;
         }
         if(shotAmount >= maxShots)
         {
