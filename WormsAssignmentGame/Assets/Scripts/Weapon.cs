@@ -19,6 +19,7 @@ public class Weapon : MonoBehaviour
     public GameObject scope;
     public float zoomLevel;
     public float range;
+    private bool canScope;
     //public Transform shootPos;
 
     private void Awake() 
@@ -32,7 +33,7 @@ public class Weapon : MonoBehaviour
         {
             Fire();
         }
-        if(Input.GetMouseButton(1))
+        if(Input.GetMouseButton(1) && noMoreShots == false)
         {
             
             cam.GetComponent<Camera>().fieldOfView = zoomLevel;
@@ -51,7 +52,7 @@ public class Weapon : MonoBehaviour
         shotAmount++;
         if(this.GetComponent<Animator>() != null)
         {
-            
+            //this.GetComponent<Animator>().ResetTrigger("fire");
             this.GetComponent<Animator>().SetTrigger("fire");
             
         }
@@ -95,4 +96,5 @@ public class Weapon : MonoBehaviour
     {
         Destroy(hitEffect);
     }
+    
 }

@@ -1169,6 +1169,7 @@ GameObject:
   - component: {fileID: 6271160659114177973}
   - component: {fileID: 6548279183135330631}
   - component: {fileID: 7073835306053207126}
+  - component: {fileID: 8822226741788883775}
   m_Layer: 0
   m_Name: gun
   m_TagString: Untagged
@@ -1266,6 +1267,26 @@ MonoBehaviour:
   scope: {fileID: 7168292731722304165}
   zoomLevel: 20
   range: 1000
+--- !u!95 &8822226741788883775
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4330577038623990973}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e5044c5e2f88e2048b594fb8e9e0ea67, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4667777776819286422
 GameObject:
   m_ObjectHideFlags: 0
