@@ -12,7 +12,7 @@ public class MemberStats : MonoBehaviour
     public GameObject uiElement;
     public Slider Mslider;
     public Slider HPslider;
-    public Slider publicHPslider;
+    public GameObject publicHPslider;
     public Image playerPublicHPcolor;
     public TextMeshProUGUI actions;
     private GameObject particleExplosion;
@@ -49,7 +49,7 @@ public class MemberStats : MonoBehaviour
         Mslider.value = movementUsed;
         shots = (weapon.GetComponent<Weapon>().maxShots - weapon.GetComponent<Weapon>().shotAmount);
         HPslider.value = health;
-        publicHPslider.value = health;
+        publicHPslider.GetComponent<Slider>().value = health;
         doneShooting = weapon.GetComponent<Weapon>().noMoreShots;
         actions.text = ("actions: " + shots);
 
@@ -58,6 +58,7 @@ public class MemberStats : MonoBehaviour
             if(dead == false)
             {
                 weapon.SetActive(false);
+                publicHPslider.SetActive(false);
                 this.gameObject.GetComponent<MeshRenderer>().enabled = false;
                 this.gameObject.GetComponent<Rigidbody>().isKinematic = true;
                 this.gameObject.GetComponent<BoxCollider>().enabled = false;

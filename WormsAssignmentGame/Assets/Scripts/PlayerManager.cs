@@ -107,6 +107,11 @@ public class PlayerManager : MonoBehaviour
             members[activeChar].GetComponentInChildren<PlayerLook>().enabled = true;
             members[activeChar].GetComponentInChildren<Camera>().enabled = true;
             members[activeChar].GetComponentInChildren<AudioListener>().enabled = true;
+            if(members[activeChar].GetComponent<MemberStats>().health > 0)
+            {
+                members[activeChar].GetComponent<MemberStats>().publicHPslider.SetActive(false);
+                members[activeChar].GetComponent<MeshRenderer>().enabled = false;
+            }
             
             
             for(int i = 0; i < members.Length; i++)
@@ -119,6 +124,11 @@ public class PlayerManager : MonoBehaviour
                     members[i].GetComponentInChildren<PlayerLook>().enabled = false;
                     members[i].GetComponentInChildren<Camera>().enabled = false;
                     members[i].GetComponentInChildren<AudioListener>().enabled = false;
+                    if(members[i].GetComponent<MemberStats>().health > 0)
+                    {
+                        members[i].GetComponent<MemberStats>().publicHPslider.SetActive(true);
+                        members[i].GetComponent<MeshRenderer>().enabled = true;
+                    }
                 }
             }
 
@@ -134,6 +144,13 @@ public class PlayerManager : MonoBehaviour
                 members[i].GetComponentInChildren<AudioListener>().enabled = false;
                 members[i].GetComponentInChildren<PlayerLook>().enabled = false;
                 members[i].GetComponentInChildren<Camera>().enabled = false;
+                if(members[i].GetComponent<MemberStats>().health > 0)
+                {
+                    members[i].GetComponent<MemberStats>().publicHPslider.SetActive(true);
+                    members[i].GetComponent<MeshRenderer>().enabled = true;
+                }
+                
+
                 
             }
         }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3893320458130715268}
   - component: {fileID: 8430830174338931242}
   - component: {fileID: 1135036741563193033}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,7 +85,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3661752309358193692}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -975,7 +975,7 @@ GameObject:
   - component: {fileID: 5297081779231487757}
   - component: {fileID: 2917506232536207128}
   - component: {fileID: 3243452384157689200}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1299,7 +1299,7 @@ GameObject:
   - component: {fileID: 2335656573194275953}
   - component: {fileID: 1602176501022452796}
   - component: {fileID: 1528712542442716070}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: publicHPbar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1941,7 +1941,7 @@ MonoBehaviour:
   uiElement: {fileID: 4088838933098750572}
   Mslider: {fileID: 4491872553121326455}
   HPslider: {fileID: 2096153948260119704}
-  publicHPslider: {fileID: 1602176501022452796}
+  publicHPslider: {fileID: 5166591750416524852}
   playerPublicHPcolor: {fileID: 1135036741563193033}
   actions: {fileID: 6740105048387196517}
   weapon: {fileID: 1143068047281682732}

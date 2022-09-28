@@ -653,7 +653,7 @@ GameObject:
   - component: {fileID: 9080047741031453448}
   - component: {fileID: 3464289464694584306}
   - component: {fileID: 3940482332915723971}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: publicHPbar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -937,7 +937,7 @@ MonoBehaviour:
   uiElement: {fileID: 6070199865793122337}
   Mslider: {fileID: 6662927807052739835}
   HPslider: {fileID: 2503172319259425535}
-  publicHPslider: {fileID: 3464289464694584306}
+  publicHPslider: {fileID: 3341030048554071902}
   playerPublicHPcolor: {fileID: 5323246072864509483}
   actions: {fileID: 2759674119729686048}
   weapon: {fileID: 4981197578571204769}
@@ -1226,7 +1226,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7773291272189183370}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1370,7 +1370,7 @@ GameObject:
   - component: {fileID: 2468561407442331640}
   - component: {fileID: 4654751390755256361}
   - component: {fileID: 7634783224086700357}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1898,7 +1898,7 @@ GameObject:
   - component: {fileID: 7885639043048175004}
   - component: {fileID: 2482987944801063171}
   - component: {fileID: 5323246072864509483}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
