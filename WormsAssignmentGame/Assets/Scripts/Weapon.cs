@@ -16,6 +16,9 @@ public class Weapon : MonoBehaviour
 
     public bool isHitscan;
     public Rigidbody projectile;
+    public GameObject scope;
+    public float zoomLevel;
+    public float range;
     //public Transform shootPos;
 
     private void Awake() 
@@ -29,18 +32,37 @@ public class Weapon : MonoBehaviour
         {
             Fire();
         }
+        if(Input.GetMouseButton(1))
+        {
+            
+            cam.GetComponent<Camera>().fieldOfView = zoomLevel;
+            scope.SetActive(true);
+        }
+        else
+        {
+            
+            cam.GetComponent<Camera>().fieldOfView = 60f;
+            scope.SetActive(false);
+        }
 
     }
     public void Fire()
     {
         shotAmount++;
-        
+        if(this.GetComponent<Animator>() != null)
+        {
+            
+            this.GetComponent<Animator>().SetTrigger("fire");
+            
+        }
         RaycastHit hit;
         if(isHitscan == true)
         {
-            if(Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))
+            
+            if(Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), out hit, range))
             {
-                print(hit.transform.name);
+                
+
                 if(hit.transform.tag == "Player" && hit.transform.GetComponent<MemberStats>().team != player.GetComponent<MemberStats>().team)
                 {
                     hit.transform.GetComponent<MemberStats>().health -= damage;
@@ -52,10 +74,13 @@ public class Weapon : MonoBehaviour
         else if(isHitscan == false && projectile != null)
         {
             var newProjectile = Instantiate(projectile, cam.transform.position, cam.transform.rotation);
-            newProjectile.velocity = transform.TransformDirection(new Vector3(0, -30f, 0));
+            newProjectile.velocity = transform.TransformDirection(new Vector3(0, -50f, 0));
             newProjectile.gameObject.GetComponent<DestroyOnHit>().team = player.GetComponent<MemberStats>().team;
             newProjectile.gameObject.GetComponent<DestroyOnHit>().damage = damage;
         }
+
+        
+
         if(shotAmount >= maxShots)
         {
             noMoreShots = true;
