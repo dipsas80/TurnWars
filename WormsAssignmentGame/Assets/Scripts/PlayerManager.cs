@@ -31,18 +31,22 @@ public class PlayerManager : MonoBehaviour
         if(id == 0)
         {
             playerIDUI.color = new Color (255, 0, 0);
+            
         }
         else if(id == 1)
         {
             playerIDUI.color = new Color (255, 239, 0);
+            
         }
         else if(id == 2)
         {
             playerIDUI.color = new Color (0, 253, 0);
+            
         }
         else
         {
             playerIDUI.color = new Color (0, 0, 255);
+            
         }
         //spawn players
 
