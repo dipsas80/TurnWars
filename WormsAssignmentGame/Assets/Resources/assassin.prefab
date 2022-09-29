@@ -1068,7 +1068,7 @@ Camera:
   m_GameObject: {fileID: 3508096065929436808}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.44705886, g: 0.9960785, b: 0.9960785, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -1166,7 +1166,7 @@ MonoBehaviour:
   airMultiplier: 0.4
   jumpKey: 32
   mouseSensitivity: 300
-  moveSpeed: 10
+  moveSpeed: 20
   ms: {fileID: 5672857346300983332}
 --- !u!1 &3938973045781423440
 GameObject:

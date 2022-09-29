@@ -118,7 +118,6 @@ public class PlayerManager : MonoBehaviour
             {
                 if(i != activeChar)
                 {
-                    
                     members[i].GetComponent<MemberStats>().weapon.SetActive(false);
                     members[i].GetComponent<MemberStats>().uiElement.SetActive(false);
                     members[i].GetComponentInChildren<PlayerLook>().enabled = false;
@@ -138,7 +137,6 @@ public class PlayerManager : MonoBehaviour
         {
             for(int i = 0; i < members.Length; i++)
             {
-                
                 members[i].GetComponent<MemberStats>().weapon.SetActive(false);
                 members[i].GetComponent<MemberStats>().uiElement.SetActive(false);
                 members[i].GetComponentInChildren<AudioListener>().enabled = false;
