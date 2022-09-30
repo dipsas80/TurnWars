@@ -23,6 +23,10 @@ public class PlayerManager : MonoBehaviour
     public GameObject mainCanvas;
     public TextMeshProUGUI playerIDUI;
 
+    private bool wait = true;
+
+    
+
     public void SpawnPlayers()
     {
         //change canvas UI
@@ -60,6 +64,8 @@ public class PlayerManager : MonoBehaviour
             members[1].GetComponent<MemberStats>().team = id;
             members[2].GetComponent<MemberStats>().team = id;
         }
+
+        
         
     }
     void Update()
@@ -80,6 +86,7 @@ public class PlayerManager : MonoBehaviour
             if(members[activeChar].GetComponent<MemberStats>().movementUsed >= 100 && members[activeChar].GetComponent<MemberStats>().doneShooting == true || members[activeChar].GetComponent<MemberStats>().health <= 0)
             {
                 
+                
                 if(activeChar != 2)
                 {
                     activeChar++;
@@ -87,11 +94,16 @@ public class PlayerManager : MonoBehaviour
                 else
                 {
                     activeChar = 0;
+                    
                     GameObject.Find("TurnManager").GetComponent<TurnManager>().NextPlayerTurn();
+                    
+                    
+                        
                 }
                 members[activeChar].GetComponent<MemberStats>().weapon.GetComponent<Weapon>().shotAmount = 0;
                 members[activeChar].GetComponent<MemberStats>().weapon.GetComponent<Weapon>().noMoreShots = false;
                 members[activeChar].GetComponent<MemberStats>().movementUsed = 0;
+            
             }
         }
         
@@ -102,11 +114,15 @@ public class PlayerManager : MonoBehaviour
         if(GameObject.Find("TurnManager") != null && GameObject.Find("TurnManager").GetComponent<TurnManager>().activePlayerIndex == id)
         {
             
+            
+            
             members[activeChar].GetComponent<MemberStats>().weapon.SetActive(true);
             members[activeChar].GetComponent<MemberStats>().uiElement.SetActive(true);
             members[activeChar].GetComponentInChildren<PlayerLook>().enabled = true;
             members[activeChar].GetComponentInChildren<Camera>().enabled = true;
             members[activeChar].GetComponentInChildren<AudioListener>().enabled = true;
+            
+            
             if(members[activeChar].GetComponent<MemberStats>().health > 0)
             {
                 members[activeChar].GetComponent<MemberStats>().publicHPslider.SetActive(false);
@@ -159,7 +175,7 @@ public class PlayerManager : MonoBehaviour
             teamDead = true;
         }
         
+        
     }
-
 
 }
