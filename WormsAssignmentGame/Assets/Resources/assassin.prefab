@@ -991,7 +991,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e001dbca3aa8b984d8e47a225c359447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponType: 0
+  weaponType: 3
   cam: {fileID: 5720262591149464994}
   player: {fileID: 1687327108511463489}
   shotAmount: 0
@@ -1109,7 +1109,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3508096065929436808}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!114 &7731970534972798482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1166,7 +1166,7 @@ MonoBehaviour:
   airMultiplier: 0.4
   jumpKey: 32
   mouseSensitivity: 300
-  moveSpeed: 20
+  moveSpeed: 15
   ms: {fileID: 5672857346300983332}
 --- !u!1 &3938973045781423440
 GameObject:

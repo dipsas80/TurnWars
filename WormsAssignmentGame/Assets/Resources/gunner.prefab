@@ -439,12 +439,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e001dbca3aa8b984d8e47a225c359447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponType: 0
+  weaponType: 2
   cam: {fileID: 9017821443756286426}
   player: {fileID: 9017821444563933737}
   shotAmount: 0
   noMoreShots: 0
-  damage: 5
+  damage: 12
   maxShots: 5
   isHitscan: 0
   projectile: {fileID: 6533336485806729967, guid: 41e11cc0e0a387f42a68dc53a5e5c747, type: 3}
@@ -1964,7 +1964,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9017821443756286429}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!114 &9017821443756286427
 MonoBehaviour:
   m_ObjectHideFlags: 0

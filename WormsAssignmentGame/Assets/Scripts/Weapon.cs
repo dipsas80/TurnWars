@@ -80,6 +80,12 @@ public class Weapon : MonoBehaviour
             newProjectile.gameObject.GetComponent<DestroyOnHit>().damage = damage;
         }
 
+        //launch backwards on sniper & bomber
+        if(weaponType == 0 || weaponType == 1)
+        {
+            player.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * -12, ForceMode.Impulse);
+        }
+
         
 
         if(shotAmount >= maxShots)
