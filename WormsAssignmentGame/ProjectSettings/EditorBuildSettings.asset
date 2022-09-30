@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/tropics.unity
     guid: 4e0545224d3f46649975a61386881552
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/sand.unity
     guid: ac928540eee730d4789cc8b122204114
   m_configObjects: {}
