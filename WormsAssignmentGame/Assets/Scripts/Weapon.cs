@@ -29,23 +29,25 @@ public class Weapon : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetMouseButtonDown(0) && noMoreShots == false)
+        //check if paused first
+        if(Time.timeScale == 1)
         {
-            Fire();
+            if(Input.GetMouseButtonDown(0) && noMoreShots == false)
+            {
+                Fire();
+            }
+            if(Input.GetMouseButton(1) && noMoreShots == false)
+            {    
+                cam.GetComponent<Camera>().fieldOfView = zoomLevel;
+                scope.SetActive(true);
+            }
+            else
+            {
+                cam.GetComponent<Camera>().fieldOfView = 60f;
+                scope.SetActive(false);
+            }
         }
-        if(Input.GetMouseButton(1) && noMoreShots == false)
-        {
-            
-            cam.GetComponent<Camera>().fieldOfView = zoomLevel;
-            scope.SetActive(true);
-        }
-        else
-        {
-            
-            cam.GetComponent<Camera>().fieldOfView = 60f;
-            scope.SetActive(false);
-        }
-
+        
     }
     public void Fire()
     {

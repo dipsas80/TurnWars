@@ -24,7 +24,7 @@ public class PlayerLook : MonoBehaviour
     public KeyCode jumpKey = KeyCode.Space;
 
     //input vars
-    public float mouseSensitivity = 100f;
+    public float mouseSensitivity;
 
     private float horizontalInput;
     private float verticalInput;
@@ -51,6 +51,9 @@ public class PlayerLook : MonoBehaviour
     }
     void Update()
     {
+        //set Sensitivity to saved sensitivity (playerpref)
+        mouseSensitivity = PlayerPrefs.GetFloat("sensitivity");
+
         //look
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
