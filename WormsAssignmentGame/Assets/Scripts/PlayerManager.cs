@@ -193,6 +193,28 @@ public class PlayerManager : MonoBehaviour
             }
         }
 
+        //chaning "TURN IS UP" text depending on characters pos in q
+        if(GameObject.Find("TurnManager") != null && GameObject.Find("TurnManager").GetComponent<TurnManager>().activePlayerIndex == id)
+        {
+            int alivePlayers = 0;
+            for(int i = 0; i < members.Length; i++)
+            {
+                if(members[i].GetComponent<MemberStats>().health > 0)
+                {
+                    alivePlayers++;
+                }
+            }
+            if(activeChar == (alivePlayers - 1))
+            {
+                members[activeChar].GetComponent<MemberStats>().turnOverSymbol.GetComponent<TextMeshProUGUI>().text = ("Next player turn");
+            }
+            else
+            {
+                members[activeChar].GetComponent<MemberStats>().turnOverSymbol.GetComponent<TextMeshProUGUI>().text = ("Swapping character");
+            }
+        }
+
+
         //check if player is eliminated
         if(members[0].GetComponent<MemberStats>().health <= 0 && members[1].GetComponent<MemberStats>().health <= 0 && members[2].GetComponent<MemberStats>().health <= 0)
         {

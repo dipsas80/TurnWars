@@ -43,7 +43,7 @@ public class PlayerLook : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if(ms.movementUsed < 100)
+        if(ms.movementUsed < 99)
         {
             MovePlayer();
         }
@@ -87,7 +87,7 @@ public class PlayerLook : MonoBehaviour
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
 
-        if(Input.GetKeyDown(jumpKey) && readyToJump == true && grounded == true && ms.movementUsed < 100)
+        if(Input.GetKeyDown(jumpKey) && readyToJump == true && grounded == true && ms.movementUsed < 99)
         {
             readyToJump = false;
             Jump();

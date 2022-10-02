@@ -22,6 +22,7 @@ public class MemberStats : MonoBehaviour
     public bool doneShooting;
     public GameObject model;
     public GameObject body;
+    public GameObject turnOverSymbol;
     
     void Start()
     {
@@ -72,10 +73,27 @@ public class MemberStats : MonoBehaviour
             }
             
         }
+
+        //adds delay between character swaps
+        if(movementUsed == 99 && doneShooting == true)
+        {
+            
+            Invoke("TurnUpSymbol", 0.5f);
+            Invoke("NextPlayer", 2f);
+        }
     }
 
     private void RemoveEffect()
     {
         Destroy(particleExplosion);
+    }
+    private void TurnUpSymbol()
+    {
+        turnOverSymbol.SetActive(true);
+    }
+    private void NextPlayer()
+    {
+        turnOverSymbol.SetActive(false);
+        movementUsed = 100;
     }
 }
