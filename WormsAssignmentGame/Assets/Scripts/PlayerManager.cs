@@ -16,7 +16,7 @@ public class PlayerManager : MonoBehaviour
 
     //Ui display faces
     public Image[] chars;
-
+    public Image[] cross;
 
 
     public GameObject[] members;
@@ -196,23 +196,39 @@ public class PlayerManager : MonoBehaviour
         //chaning "TURN IS UP" text depending on characters pos in q
         if(GameObject.Find("TurnManager") != null && GameObject.Find("TurnManager").GetComponent<TurnManager>().activePlayerIndex == id)
         {
-            int alivePlayers = 0;
-            for(int i = 0; i < members.Length; i++)
+            //somewhat of a "spegehtti-solution" but it does the job
+            if(activeChar == 2)
             {
-                if(members[i].GetComponent<MemberStats>().health > 0)
-                {
-                    alivePlayers++;
-                }
+                members[activeChar].GetComponent<MemberStats>().turnOverSymbol.GetComponent<TextMeshProUGUI>().text = ("Next player turn");
             }
-            if(activeChar == (alivePlayers - 1))
+            else if(activeChar == 1 && members[(activeChar + 1)].GetComponent<MemberStats>().health <= 0)
+            {
+                members[activeChar].GetComponent<MemberStats>().turnOverSymbol.GetComponent<TextMeshProUGUI>().text = ("Next player turn");
+            }
+            else if(activeChar == 0 && members[(activeChar + 1)].GetComponent<MemberStats>().health <= 0 && members[(activeChar + 2)].GetComponent<MemberStats>().health <= 0)
             {
                 members[activeChar].GetComponent<MemberStats>().turnOverSymbol.GetComponent<TextMeshProUGUI>().text = ("Next player turn");
             }
             else
             {
-                members[activeChar].GetComponent<MemberStats>().turnOverSymbol.GetComponent<TextMeshProUGUI>().text = ("Swapping character");
+                members[activeChar].GetComponent<MemberStats>().turnOverSymbol.GetComponent<TextMeshProUGUI>().text = ("");
+            }
+            
+            
+        }
+        //cross-out dead member icons
+        for(int d = 0; d < members.Length; d++)
+        {
+            if(members[d].GetComponent<MemberStats>().health <= 0)
+            {
+                cross[d].enabled = true;
+            }
+            else
+            {
+                cross[d].enabled = false;
             }
         }
+        
 
 
         //check if player is eliminated
