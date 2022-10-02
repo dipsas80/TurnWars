@@ -12815,7 +12815,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerBody: {fileID: 9017821444563933749}
   groundDrag: 5
-  playerHeight: 1.5
+  playerHeight: 1.2
   whatIsGround:
     serializedVersion: 2
     m_Bits: 1

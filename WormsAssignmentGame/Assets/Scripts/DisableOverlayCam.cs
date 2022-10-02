@@ -5,6 +5,7 @@ using UnityEngine;
 public class DisableOverlayCam : MonoBehaviour
 {
     public Camera playerCam;
+    public bool disableFOV;
     // Update is called once per frame
     void Update()
     {
@@ -12,7 +13,11 @@ public class DisableOverlayCam : MonoBehaviour
         {
 
             this.GetComponent<Camera>().enabled = true;
-            this.GetComponent<Camera>().fieldOfView = playerCam.fieldOfView;
+            if(disableFOV == false)
+            {
+                this.GetComponent<Camera>().fieldOfView = playerCam.fieldOfView;
+            }
+            
         }
         else
         {
