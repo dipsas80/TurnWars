@@ -14,6 +14,11 @@ public class PlayerManager : MonoBehaviour
     public string member2;
     public string member3;
 
+    //Ui display faces
+    public Image[] chars;
+
+
+
     public GameObject[] members;
     
     public int id;
@@ -29,6 +34,12 @@ public class PlayerManager : MonoBehaviour
 
     public void SpawnPlayers()
     {
+        //set faces
+
+        chars[0].sprite = Resources.Load <Sprite> (member1 + "portrait");
+        chars[1].sprite = Resources.Load <Sprite> (member2 + "portrait");
+        chars[2].sprite = Resources.Load <Sprite> (member3 + "portrait");
+
         //change canvas UI
         
         playerIDUI.text = ("Player " + (id + 1));
