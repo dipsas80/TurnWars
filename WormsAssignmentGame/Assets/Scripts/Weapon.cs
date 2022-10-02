@@ -20,7 +20,8 @@ public class Weapon : MonoBehaviour
     public float zoomLevel;
     public float range;
     private bool canScope;
-    //public Transform shootPos;
+    public Transform shootPos;
+    public Transform shootPos2;
 
     private void Awake() 
     {
@@ -40,11 +41,20 @@ public class Weapon : MonoBehaviour
             {    
                 cam.GetComponent<Camera>().fieldOfView = zoomLevel;
                 scope.SetActive(true);
+                if(weaponType == 0)
+                {
+                    this.GetComponent<MeshRenderer>().enabled = false;
+                }
+                
             }
             else
             {
                 cam.GetComponent<Camera>().fieldOfView = 60f;
                 scope.SetActive(false);
+                if(weaponType == 0)
+                {
+                    this.GetComponent<MeshRenderer>().enabled = true;
+                }
             }
         }
         
@@ -76,10 +86,17 @@ public class Weapon : MonoBehaviour
         }
         else if(isHitscan == false && projectile != null)
         {
-            var newProjectile = Instantiate(projectile, cam.transform.position, cam.transform.rotation);
-            newProjectile.velocity = transform.TransformDirection(new Vector3(0, -50f, 0));
+            var newProjectile = Instantiate(projectile, shootPos.position, cam.transform.rotation);
+            //newProjectile.GetComponent<Rigidbody>().AddForce(cam.transform.forward * 100f, ForceMode.Impulse);
             newProjectile.gameObject.GetComponent<DestroyOnHit>().team = player.GetComponent<MemberStats>().team;
             newProjectile.gameObject.GetComponent<DestroyOnHit>().damage = damage;
+            if(weaponType == 2)
+            {
+                var newProjectile2 = Instantiate(projectile, shootPos2.position, cam.transform.rotation);
+                //newProjectile2.GetComponent<Rigidbody>().AddForce(cam.transform.forward * 100f, ForceMode.Impulse);
+                newProjectile2.gameObject.GetComponent<DestroyOnHit>().team = player.GetComponent<MemberStats>().team;
+                newProjectile2.gameObject.GetComponent<DestroyOnHit>().damage = damage;
+            }
         }
 
         //launch backwards on sniper & bomber

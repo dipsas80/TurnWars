@@ -123,10 +123,14 @@ public class PlayerManager : MonoBehaviour
             members[activeChar].GetComponentInChildren<AudioListener>().enabled = true;
             
             
+            
             if(members[activeChar].GetComponent<MemberStats>().health > 0)
             {
                 members[activeChar].GetComponent<MemberStats>().publicHPslider.SetActive(false);
                 members[activeChar].GetComponent<MeshRenderer>().enabled = false;
+                //disable model
+                members[activeChar].GetComponent<MemberStats>().model.SetActive(false);
+                members[activeChar].GetComponent<MemberStats>().body.SetActive(true);
             }
             
             
@@ -139,10 +143,15 @@ public class PlayerManager : MonoBehaviour
                     members[i].GetComponentInChildren<PlayerLook>().enabled = false;
                     members[i].GetComponentInChildren<Camera>().enabled = false;
                     members[i].GetComponentInChildren<AudioListener>().enabled = false;
+                    
                     if(members[i].GetComponent<MemberStats>().health > 0)
                     {
                         members[i].GetComponent<MemberStats>().publicHPslider.SetActive(true);
                         members[i].GetComponent<MeshRenderer>().enabled = true;
+                        //enable model & body change
+                        members[i].GetComponent<MemberStats>().model.SetActive(true);
+                        members[i].GetComponent<MemberStats>().body.SetActive(false);
+                        
                     }
                 }
             }
@@ -153,13 +162,17 @@ public class PlayerManager : MonoBehaviour
         {
             for(int i = 0; i < members.Length; i++)
             {
+                members[i].GetComponent<MemberStats>().body.SetActive(false);
                 members[i].GetComponent<MemberStats>().weapon.SetActive(false);
                 members[i].GetComponent<MemberStats>().uiElement.SetActive(false);
                 members[i].GetComponentInChildren<AudioListener>().enabled = false;
                 members[i].GetComponentInChildren<PlayerLook>().enabled = false;
                 members[i].GetComponentInChildren<Camera>().enabled = false;
+                
                 if(members[i].GetComponent<MemberStats>().health > 0)
                 {
+                    members[i].GetComponent<MemberStats>().model.SetActive(true);
+                    members[i].GetComponent<MemberStats>().body.SetActive(false);
                     members[i].GetComponent<MemberStats>().publicHPslider.SetActive(true);
                     members[i].GetComponent<MeshRenderer>().enabled = true;
                 }

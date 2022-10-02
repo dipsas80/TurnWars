@@ -10,6 +10,7 @@ public class DestroyOnHit : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
+        Invoke("Decay", 0.5f);
         if(other.transform.tag == "Player" && team != other.transform.GetComponent<MemberStats>().team)
         {
             if(isExplosive == false)
@@ -45,5 +46,14 @@ public class DestroyOnHit : MonoBehaviour
             Destroy(this.gameObject);
         }
         
+    }
+    void Update()
+    {
+        //move bullet
+        transform.Translate(Vector3.forward * Time.deltaTime * 50f);
+    }
+    void Decay()
+    {
+        Destroy(this.gameObject);
     }
 }

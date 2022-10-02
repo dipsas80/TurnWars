@@ -20,6 +20,8 @@ public class MemberStats : MonoBehaviour
     public GameObject weapon;
     public int team;
     public bool doneShooting;
+    public GameObject model;
+    public GameObject body;
     
     void Start()
     {
@@ -57,6 +59,8 @@ public class MemberStats : MonoBehaviour
         {
             if(dead == false)
             {
+                model.SetActive(false);
+                body.SetActive(false);
                 weapon.SetActive(false);
                 publicHPslider.SetActive(false);
                 this.gameObject.GetComponent<MeshRenderer>().enabled = false;
