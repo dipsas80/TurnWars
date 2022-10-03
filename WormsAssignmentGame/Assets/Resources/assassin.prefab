@@ -6941,9 +6941,9 @@ GameObject:
   - component: {fileID: 3492965195991021204}
   - component: {fileID: 3492965195991021205}
   - component: {fileID: 3492965195991021202}
-  - component: {fileID: 3492965195991021203}
   - component: {fileID: 7483923152829067377}
   - component: {fileID: 3492965195991021200}
+  - component: {fileID: 7086860827943271810}
   m_Layer: 0
   m_Name: assassin
   m_TagString: Player
@@ -7020,19 +7020,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3492965195991021203
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3492965195991021201}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 3.2541738, z: 0.6451721}
-  m_Center: {x: 0, y: 1.608912, z: 0.023140907}
 --- !u!114 &7483923152829067377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7076,6 +7063,20 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 1
+--- !u!136 &7086860827943271810
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3492965195991021201}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.32693517
+  m_Height: 3.3075323
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.6383476, z: -0.034612954}
 --- !u!1 &3498971512849635126
 GameObject:
   m_ObjectHideFlags: 0
@@ -9528,7 +9529,6 @@ GameObject:
   m_Component:
   - component: {fileID: 914587089790422502}
   - component: {fileID: 2098954809546041742}
-  - component: {fileID: 5224692221945988079}
   - component: {fileID: 8578892016571450656}
   - component: {fileID: 5243843582746637368}
   m_Layer: 0
@@ -9596,14 +9596,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &5224692221945988079
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5238753999334212510}
-  m_Enabled: 1
 --- !u!114 &8578892016571450656
 MonoBehaviour:
   m_ObjectHideFlags: 0

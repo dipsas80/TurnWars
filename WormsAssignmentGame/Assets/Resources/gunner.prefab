@@ -8726,7 +8726,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6230135482635984443}
   - component: {fileID: 2963972081830601110}
-  - component: {fileID: 7828677017974748460}
   - component: {fileID: 3826702214319249095}
   - component: {fileID: 7327604603825141599}
   m_Layer: 0
@@ -8794,14 +8793,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &7828677017974748460
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6107026414724835051}
-  m_Enabled: 1
 --- !u!114 &3826702214319249095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13558,9 +13549,9 @@ GameObject:
   - component: {fileID: 9017821444563933749}
   - component: {fileID: 9017821444563933748}
   - component: {fileID: 9017821444563933751}
-  - component: {fileID: 9017821444563933750}
   - component: {fileID: 303764246877911685}
   - component: {fileID: 9017821444563933744}
+  - component: {fileID: 1624097343629051986}
   m_Layer: 0
   m_Name: gunner
   m_TagString: Player
@@ -13637,19 +13628,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &9017821444563933750
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9017821444563933737}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 3.2797449, z: 0.5884708}
-  m_Center: {x: 0, y: 1.6325346, z: -0.017063558}
 --- !u!114 &303764246877911685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13693,6 +13671,20 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 1
+--- !u!136 &1624097343629051986
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9017821444563933737}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.3426768
+  m_Height: 3.26962
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.6259656, z: 0.026860029}
 --- !u!1 &9076078907680926918
 GameObject:
   m_ObjectHideFlags: 0

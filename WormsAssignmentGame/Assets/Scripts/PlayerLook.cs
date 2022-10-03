@@ -33,6 +33,7 @@ public class PlayerLook : MonoBehaviour
 
     public float moveSpeed = 10f;
 
+    
     //MemberStats
     public MemberStats ms;
     
@@ -71,14 +72,26 @@ public class PlayerLook : MonoBehaviour
         SpeedControl();
 
         //Ground checking
-        grounded = Physics.Raycast(playerBody.transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
+        grounded = Physics.Raycast(playerBody.transform.position, Vector3.down, out var hit, playerHeight * 0.5f + 0.2f, whatIsGround);
+        
         if(grounded)
         {
+            
             playerBody.GetComponent<Rigidbody>().drag = groundDrag;
         }
         else
         {
+            //feetCollider.transform.localRotation = Quaternion.identity;
             playerBody.GetComponent<Rigidbody>().drag = 0;
+        }
+        //slope sliding control
+        if(grounded == true && verticalInput == 0 && horizontalInput == 0)
+        {
+            playerBody.GetComponent<CapsuleCollider>().material.dynamicFriction = 3;
+        }
+        else
+        {
+            playerBody.GetComponent<CapsuleCollider>().material.dynamicFriction = 0;
         }
 
     }
@@ -100,8 +113,10 @@ public class PlayerLook : MonoBehaviour
 
         if(moveDirection != Vector3.zero)
         {
+            
             ms.movementUsed += 0.5f;
         }
+        
 
         if(grounded)
         {
@@ -119,6 +134,7 @@ public class PlayerLook : MonoBehaviour
 
         if(flatVel.magnitude > moveSpeed)
         {
+            
             Vector3 limitedVel = flatVel.normalized * moveSpeed;
             playerBody.GetComponent<Rigidbody>().velocity = new Vector3(limitedVel.x, playerBody.GetComponent<Rigidbody>().velocity.y, limitedVel.z);
         }

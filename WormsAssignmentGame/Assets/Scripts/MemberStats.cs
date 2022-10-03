@@ -66,7 +66,7 @@ public class MemberStats : MonoBehaviour
                 publicHPslider.SetActive(false);
                 this.gameObject.GetComponent<MeshRenderer>().enabled = false;
                 this.gameObject.GetComponent<Rigidbody>().isKinematic = true;
-                this.gameObject.GetComponent<BoxCollider>().enabled = false;
+                this.gameObject.GetComponent<CapsuleCollider>().enabled = false;
                 particleExplosion = Instantiate(Resources.Load("explode", typeof(GameObject)), this.transform.position, Quaternion.Euler (90f, 0f, 0f)) as GameObject;
                 Invoke("RemoveEffect", 1.0f);
                 dead = true;

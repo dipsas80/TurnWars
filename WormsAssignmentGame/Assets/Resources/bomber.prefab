@@ -3528,7 +3528,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4062440220454149349}
   - component: {fileID: 9093036550788938751}
-  - component: {fileID: 6794117913662516198}
   - component: {fileID: 6581389096218261168}
   - component: {fileID: 4633119578598502701}
   m_Layer: 0
@@ -3596,14 +3595,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &6794117913662516198
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2186132636399347710}
-  m_Enabled: 1
 --- !u!114 &6581389096218261168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13170,9 +13161,9 @@ GameObject:
   - component: {fileID: 9017821444563933749}
   - component: {fileID: 9017821444563933748}
   - component: {fileID: 9017821444563933751}
-  - component: {fileID: 9017821444563933750}
   - component: {fileID: 303764246877911685}
   - component: {fileID: 9017821444563933744}
+  - component: {fileID: 3308110958749540254}
   m_Layer: 0
   m_Name: bomber
   m_TagString: Player
@@ -13249,19 +13240,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &9017821444563933750
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9017821444563933737}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 3.2797449, z: 0.5884708}
-  m_Center: {x: 0, y: 1.6325346, z: -0.017063558}
 --- !u!114 &303764246877911685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13305,6 +13283,20 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 1
+--- !u!136 &3308110958749540254
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9017821444563933737}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.3426768
+  m_Height: 3.26962
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.6259656, z: 0.026860029}
 --- !u!1 &9020210982315333508
 GameObject:
   m_ObjectHideFlags: 0

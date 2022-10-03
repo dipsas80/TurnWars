@@ -1262,7 +1262,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3113782757426376145}
   - component: {fileID: 5406381632617709466}
-  - component: {fileID: 4933409454947540152}
   - component: {fileID: 4350145969738631560}
   - component: {fileID: 7797207928686127150}
   m_Layer: 0
@@ -1330,14 +1329,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &4933409454947540152
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 669865613448770147}
-  m_Enabled: 1
 --- !u!114 &4350145969738631560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6532,9 +6523,9 @@ GameObject:
   - component: {fileID: 3492965195991021204}
   - component: {fileID: 3492965195991021205}
   - component: {fileID: 3492965195991021202}
-  - component: {fileID: 3492965195991021203}
   - component: {fileID: 7483923152829067377}
   - component: {fileID: 3492965195991021200}
+  - component: {fileID: 5006419948799859369}
   m_Layer: 0
   m_Name: sniper
   m_TagString: Player
@@ -6611,19 +6602,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3492965195991021203
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3492965195991021201}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 3.2541738, z: 0.6451721}
-  m_Center: {x: 0, y: 1.4179788, z: 0.023140907}
 --- !u!114 &7483923152829067377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6667,6 +6645,20 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 1
+--- !u!136 &5006419948799859369
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3492965195991021201}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.3426768
+  m_Height: 3.2769828
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.4478889, z: 0.026860029}
 --- !u!1 &3506539464349024067
 GameObject:
   m_ObjectHideFlags: 0
